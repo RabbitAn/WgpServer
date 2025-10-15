@@ -1,0 +1,11 @@
+2025-10-14 09:53:12 [ERROR] user_route.py[line:37] 更新用户4f658cde-3394-4216-bc57-c52e1b036bb0信息失败: 'role_id'
+2025-10-14 09:54:34 [ERROR] user_route.py[line:37] 更新用户4f658cde-3394-4216-bc57-c52e1b036bb0信息失败: 'role_id'
+2025-10-14 10:09:11 [ERROR] user_route.py[line:37] 更新用户4f658cde-3394-4216-bc57-c52e1b036bb0信息失败: 'UserIn' object has no attribute 'save'
+2025-10-14 10:11:44 [ERROR] user_route.py[line:37] 更新用户4f658cde-3394-4216-bc57-c52e1b036bb0信息失败: 'UserIn' object has no attribute 'password'
+2025-10-14 10:12:55 [ERROR] user_route.py[line:37] 更新用户4f658cde-3394-4216-bc57-c52e1b036bb0信息失败: invalid input for query argument $2: "username='王五' email='71484983@qq.com' r... (invalid UUID "username='王五' email='71484983@qq.com' role='operator' phone=None is_active=True page=1 page_size=10": length must be between 32..36 characters, got 103)
+2025-10-14 10:13:04 [ERROR] user_route.py[line:37] 更新用户4f658cde-3394-4216-bc57-c52e1b036bb0信息失败: invalid input for query argument $2: "username='王五' email='71484983@qq.com' r... (invalid UUID "username='王五' email='71484983@qq.com' role='operator' phone=None is_active=True page=1 page_size=10": length must be between 32..36 characters, got 103)
+2025-10-14 10:14:38 [ERROR] user_route.py[line:37] 更新用户4f658cde-3394-4216-bc57-c52e1b036bb0信息失败: invalid input for query argument $2: "username='王五' email='71484983@qq.com' r... (invalid UUID "username='王五' email='71484983@qq.com' role='operator' phone=None is_active=True page=1 page_size=10": length must be between 32..36 characters, got 103)
+2025-10-14 10:19:39 [ERROR] user_route.py[line:27] 创建用户失败: 'UserIn' object has no attribute 'password'
+2025-10-14 10:22:01 [ERROR] user_route.py[line:27] 创建用户失败: 角色 user 不存在
+2025-10-14 10:23:47 [ERROR] user_route.py[line:37] 更新用户5c2d4364-df74-485f-ad95-e1a2e4a32ac0信息失败: null value in column "is_active" of relation "users" violates not-null constraint
+DETAIL:  失败, 行包含(5c2d4364-df74-485f-ad95-e1a2e4a32ac0, test, engineer, 123@q.com, 123, null, 2025-10-14 10:23:31.740275+08, null).

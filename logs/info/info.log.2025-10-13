@@ -1,0 +1,17 @@
+2025-10-13 10:27:44 [INFO] __init__.py[line:163] Tortoise-ORM started, {'default': <tortoise.backends.asyncpg.client.AsyncpgDBClient object at 0x000001FE096086E0>}, {'models': {'User': <class 'models.user.User'>, 'Role': <class 'models.role.Role'>, 'UserRole': <class 'models.user_role.UserRole'>, 'Aerich': <class 'aerich.models.Aerich'>}}
+2025-10-13 10:27:44 [INFO] __init__.py[line:165] Tortoise-ORM generating schema
+2025-10-13 10:27:57 [INFO] __init__.py[line:171] Tortoise-ORM shutdown
+2025-10-13 10:27:58 [INFO] __init__.py[line:163] Tortoise-ORM started, {'default': <tortoise.backends.asyncpg.client.AsyncpgDBClient object at 0x000001D3128D86E0>}, {'models': {'User': <class 'models.user.User'>, 'Role': <class 'models.role.Role'>, 'UserRole': <class 'models.user_role.UserRole'>, 'Aerich': <class 'aerich.models.Aerich'>}}
+2025-10-13 10:27:58 [INFO] __init__.py[line:165] Tortoise-ORM generating schema
+2025-10-13 10:28:16 [INFO] main.py[line:26] Hello World
+2025-10-13 10:31:46 [INFO] __init__.py[line:171] Tortoise-ORM shutdown
+2025-10-13 10:31:46 [INFO] __init__.py[line:163] Tortoise-ORM started, {'default': <tortoise.backends.asyncpg.client.AsyncpgDBClient object at 0x000002DEC86586E0>}, {'models': {'User': <class 'models.user.User'>, 'Role': <class 'models.role.Role'>, 'UserRole': <class 'models.user_role.UserRole'>, 'Aerich': <class 'aerich.models.Aerich'>}}
+2025-10-13 10:31:46 [INFO] __init__.py[line:165] Tortoise-ORM generating schema
+2025-10-13 10:31:54 [INFO] __init__.py[line:171] Tortoise-ORM shutdown
+2025-10-13 10:32:29 [INFO] main.py[line:26] Hello World
+2025-10-13 10:32:30 [INFO] main.py[line:26] Hello World
+2025-10-13 10:32:30 [INFO] main.py[line:26] Hello World
+2025-10-13 10:32:31 [INFO] main.py[line:26] Hello World
+2025-10-13 10:32:31 [INFO] main.py[line:26] Hello World
+2025-10-13 10:32:31 [INFO] main.py[line:26] Hello World
+2025-10-13 11:28:41 [INFO] role_route.py[line:17] admin查询角色列表
