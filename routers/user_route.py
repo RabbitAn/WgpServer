@@ -11,14 +11,14 @@ logger = logging.getLogger(__name__)
 user_router=APIRouter()
 
 #查询用户
-@user_router.get("users",summary="查询用户")
-async def get_users(user_input: UserIn = Depends()):
+@user_router.get("/users",summary="查询用户")
+async def get_users(user_input: UserIn=Depends(),payload:dict=Depends(verify_access_token(["operator","engineer","admin"]))):
     result= await query_user_service(user_input)
-    print(result)
+    logger.info(f"{payload['sub']}查询用户{user_input.page}页{user_input.page_size}条")
     return result
 
 #创建用户
-@user_router.post("users",summary="创建用户")
+@user_router.post("/users",summary="创建用户")
 async def create_users(user_input: UserAddIn,payload:dict = Depends(verify_access_token(["admin"]))):
     try:
         logger.info(f"{payload['sub']}创建用户")
@@ -28,7 +28,7 @@ async def create_users(user_input: UserAddIn,payload:dict = Depends(verify_acces
         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
 
 #更新用户
-@user_router.put("users/{user_id}",summary="更新用户信息")
+@user_router.put("/users/{user_id}",summary="更新用户信息")
 async def update_users(user_id: str, user_input: UserUpdate,payload:dict=Depends(verify_access_token(["admin"]))):
     try:
         logger.info(f"{payload['sub']}更新用户{user_id}信息")
@@ -39,7 +39,7 @@ async def update_users(user_id: str, user_input: UserUpdate,payload:dict=Depends
 
 
 #删除用户
-@user_router.delete("users/{user_id}",summary="删除用户")
+@user_router.delete("/users/{user_id}",summary="删除用户")
 async def delete_users(user_id: str,payload:dict=Depends(verify_access_token(["admin"]))):
     try:
         logger.info(f"{payload['sub']}删除用户{user_id}")

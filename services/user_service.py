@@ -25,6 +25,7 @@ class UserOut(BaseModel):
     phone: Optional[str]=None
     is_active: bool
     created_at: datetime.datetime
+    updated_at: datetime.datetime
 
 
 #用户条件查询
@@ -65,7 +66,8 @@ async def query_user_service(user: UserIn):
             role=db_user.role,
             email=db_user.email,
             is_active=db_user.is_active,
-            created_at=db_user.created_at
+            created_at=db_user.created_at,
+            updated_at=db_user.updated_at
         )
         users_out.append(user_out)
     return {"total": count_total, "users": users_out,"page":user.page,"page_size":user.page_size}
