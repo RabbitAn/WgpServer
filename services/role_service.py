@@ -34,8 +34,12 @@ async def query_role_service(input: RoleIn):
         res.append(role_out)
     return {"roles":res,"total":len(roles),"page":input.page,"page_size":input.page_size}
 
+
+class RoleAddIn(BaseModel):
+    role_name: Optional[str] = None
+
 # 创建角色
-async def create_role_service(input: RoleIn) :
+async def create_role_service(input: RoleAddIn) :
     role = await Role.create(
         role_name=input.role_name,
         description=input.description

@@ -1,8 +1,9 @@
 from uuid import UUID
+import tortoise
+import aerich.models
 from fastapi import  APIRouter,Depends,status
 from starlette.exceptions import HTTPException
-
-from services.role_service import RoleOut, query_role_service, create_role_service, update_role_service, delete_role_service,RoleIn
+from services.role_service import RoleOut, query_role_service, create_role_service, update_role_service, delete_role_service,RoleIn,RoleAddIn
 from services.auth_services.dependencies import verify_access_token
 import logging
 
@@ -23,7 +24,7 @@ async def get_role(role_input: RoleIn=Depends(),payload: dict=Depends(verify_acc
 
 #TODO:创建角色,需要管理员权限,传入角色信息，返回角色信息
 @role_router.post("/roles/create",summary="创建角色")
-async def create_roles(input: RoleIn,payload: dict=Depends(verify_access_token(["admin"]))):
+async def create_roles(input: RoleAddIn,payload: dict=Depends(verify_access_token(["admin"]))):
     try:
         logger.info(f"{payload['sub']}创建角色")
         result = await create_role_service(input)
@@ -43,6 +44,9 @@ async def update_role(id:str, input: RoleIn,payload: dict=Depends(verify_access_
     except Exception as e:
         logger.error(f"{payload['sub']}更新角色失败:{str(e)}")
         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=str(e))
+
+
+
 
 #TODO:删除角色,需要管理员权限,传入角色id，返回成功或失败
 @role_router.delete("/roles/{id}",summary="删除角色")
